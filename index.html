@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="asets/css/style.css">
+
+    <script src="assets/javascript/jquery-3.4.1.js"></script>
+    <script src="assets/javascript/script.js"></script>
+
     <title>Document</title>
 </head>
 <body>
-    <div class="container"></div>
+    <header><h1>Weather Dashboard</h1></header>
+
+    <div class="container">
+
+        <div class="citySearch">
+            <label for="search">Search for a City</label>
+            <input type="text" id="search">
+            <button type="submit">Search</button>
+
+            <div class="cities"></div>
+        </div>
+
+        <div class="current">
+            <h2><span id="currentCity"></span> <span id="currentDate"></span> <span id="currentIcon"></span></h2>
+            <p id="currentTemp"></p>
+            <p id="currentHumid"></p>
+            <p id="currentWind"></p>
+            <p id="currentUV"></p>
+        </div>
+
+        <div class="fiveDay"></div>
+
+    </div>
 </body>
 </html>
