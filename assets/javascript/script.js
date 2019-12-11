@@ -48,7 +48,9 @@ $(document).ready(function(){
         }
 
         // set the city name in the list
-        pastCities.push(city);
+        if(!pastCities.includes(city)){
+            pastCities.push(city);
+        }
 
         setCity(pastCities);
 
@@ -102,6 +104,11 @@ $(document).ready(function(){
 
     }
 
+    $("#cityList").on("click", ".pastCity", function(){
+        city = $(this).attr("data-city");
+        getCity();
+    })
+
     // clean up inputs and prevent duplicates
     // alphapetize?
     function setCity(cities){
@@ -111,6 +118,7 @@ $(document).ready(function(){
             let li = $("<li>");
             let a = $("<a>").attr({
                 href : "#",
+                class : "pastCity",
                 "data-city" : cities[i]
             });
             a.text(cities[i]);
