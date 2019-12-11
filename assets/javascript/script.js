@@ -1,14 +1,33 @@
-//  9797b0cab9598da515a7cb02493600e9
-// api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=9797b0cab9598da515a7cb02493600e9
-// 
+// add dates js
+
+
 $(document).ready(function(){
 
     let city;
     let pastCities = [];
+
+    navigator.geolocation.getCurrentPosition(function(pos){
+        console.log(pos);
+        $.ajax({
+            url : "https://api.opencagedata.com/geocode/v1/json?q=" + pos.coords.latitude + "+" + pos.coords.longitude + "&key=e16da4bde78f454b9bbb8c21599196e6",
+            method : "GET"
+        }).then(function(response){
+            if(!pastCities.includes(response.results[0].components.city)){
+                city = response.results[0].components.city;
+                pastCities.unshift(city);
+                localStorage.setItem("pastCities", JSON.stringify(pastCities));
+                getCity();
+            }
+        });
+    });
+
     if(localStorage.getItem("pastCities")){
-        pastCities = JSON.parse(localStorage.getItem("pastCities"));
+        pastCities = pastCities.concat(JSON.parse(localStorage.getItem("pastCities")));
     }
     setCity(pastCities);
+
+    city = pastCities[0];
+    getCity();
 
     $("#search").on("click", function(event){
         event.preventDefault();
@@ -43,14 +62,13 @@ $(document).ready(function(){
             city = response.name;
             
         }catch(error){
-            console.log("weather is dumb");
             console.log(error);
             return;
         }
 
         // set the city name in the list
         if(!pastCities.includes(city)){
-            pastCities.push(city);
+            pastCities.unshift(city);
         }
 
         localStorage.setItem("pastCities", JSON.stringify(pastCities));
