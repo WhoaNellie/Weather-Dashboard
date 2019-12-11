@@ -4,18 +4,14 @@
 $(document).ready(function(){
 
     let city;
-    let queryURL;
-
     let pastCities = [];
 
     $("#search").on("click", function(event){
         event.preventDefault();
 
         city = $("#searchFor").val();
-        $("#searchFor").empty();
-        console.log(queryURL);
+        $("#searchFor").val('');
         getCity();
-        // setCity();
     })
         
     async function getCity(){
