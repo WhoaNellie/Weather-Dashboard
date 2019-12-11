@@ -1,5 +1,6 @@
 // add dates js
-
+// finish 5 day forecast
+// get weather status for icons
 
 $(document).ready(function(){
 
@@ -8,6 +9,7 @@ $(document).ready(function(){
 
     navigator.geolocation.getCurrentPosition(function(pos){
         console.log(pos);
+        // convert coords to city name
         $.ajax({
             url : "https://api.opencagedata.com/geocode/v1/json?q=" + pos.coords.latitude + "+" + pos.coords.longitude + "&key=e16da4bde78f454b9bbb8c21599196e6",
             method : "GET"
