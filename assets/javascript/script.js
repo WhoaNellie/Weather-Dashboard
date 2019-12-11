@@ -5,6 +5,10 @@ $(document).ready(function(){
 
     let city;
     let pastCities = [];
+    if(localStorage.getItem("pastCities")){
+        pastCities = JSON.parse(localStorage.getItem("pastCities"));
+    }
+    setCity(pastCities);
 
     $("#search").on("click", function(event){
         event.preventDefault();
@@ -41,6 +45,7 @@ $(document).ready(function(){
         }catch(error){
             console.log("weather is dumb");
             console.log(error);
+            return;
         }
 
         // set the city name in the list
@@ -48,6 +53,7 @@ $(document).ready(function(){
             pastCities.push(city);
         }
 
+        localStorage.setItem("pastCities", JSON.stringify(pastCities));
         setCity(pastCities);
 
 
@@ -106,7 +112,7 @@ $(document).ready(function(){
     })
 
     // clean up inputs and prevent duplicates
-    // alphapetize?
+    // get from local storage
     function setCity(cities){
         $("#cityList").empty();
         
