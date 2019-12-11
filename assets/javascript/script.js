@@ -6,7 +6,7 @@ $(document).ready(function(){
     let city;
     let queryURL;
 
-    let cityName;
+    let pastCities = [];
 
     $("#search").on("click", function(event){
         event.preventDefault();
@@ -15,7 +15,7 @@ $(document).ready(function(){
         $("#searchFor").empty();
         console.log(queryURL);
         getCity();
-        setCity();
+        // setCity();
     })
         
     async function getCity(){
@@ -39,10 +39,19 @@ $(document).ready(function(){
 
             lat = response.coord.lat;
             long = response.coord.lon;
+
+            city = response.name;
+            
         }catch(error){
             console.log("weather is dumb");
             console.log(error);
         }
+
+        // set the city name in the list
+        pastCities.push(city);
+
+        setCity(pastCities);
+
 
         // UV
         $.ajax({
@@ -95,9 +104,19 @@ $(document).ready(function(){
 
     // clean up inputs and prevent duplicates
     // alphapetize?
-    function setCity(){
-        let li = $("<li>").text(city);
+    function setCity(cities){
+        $("#cityList").empty();
         
-        $("#cityList").prepend(li);
+        for(let i = 0; i < cities.length; i++){
+            let li = $("<li>");
+            let a = $("<a>").attr({
+                href : "#",
+                "data-city" : cities[i]
+            });
+            a.text(cities[i]);
+
+            li.append(a);
+            $("#cityList").append(li);
+        }
     }
 });
