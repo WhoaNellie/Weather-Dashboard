@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script src="assets/javascript/jquery-3.4.1.js"></script>
+    <script src="assets/javascript/moment.min.js"></script>
     <script src="assets/javascript/script.js"></script>
 
     <title>Document</title>
@@ -29,15 +30,17 @@
             <ul id="cityList"></ul>
         </div>
 
-        <div id="current">
-            <h2><span id="currentCity"></span> <span id="currentDate"></span> <span id="currentIcon"></span></h2>
-            <p id="currentTemp"></p>
-            <p id="currentHumid"></p>
-            <p id="currentWind"></p>
-            <p id="currentUV"></p>
-        </div>
+        <div class="weather">
+            <div id="current">
+                <h2><span id="currentCity"></span> <span id="currentDate"></span> <span id="currentIcon"></span></h2>
+                <p id="currentTemp"></p>
+                <p id="currentHumid"></p>
+                <p id="currentWind"></p>
+                <p id="currentUV"></p>
+            </div>
 
-        <div id="fiveDay"></div>
+            <div id="fiveDay"></div>
+        </div> 
 
     </div>
 </body>

@@ -1,6 +1,7 @@
 // add dates js
 // finish 5 day forecast
 // get weather status for icons
+// UV index classes
 
 $(document).ready(function(){
 
@@ -54,6 +55,11 @@ $(document).ready(function(){
 
             console.log(response);
             $("#currentCity").text(response.name);
+            $("#currentDate").text(moment().format("dddd MMM Do YYYY"));
+            let icon = response.weather[0].icon;
+            let currIcon = $("<img>").attr({src : "http://openweathermap.org/img/wn/"+ icon +"@2x.png"})
+            $("#currentIcon").html(currIcon);
+
             $("#currentTemp").text("Temperature: " + response.main.temp + " F");
             $("#currentHumid").text("Humidity: " + response.main.humidity + "%");
             $("#currentWind").text("Wind Speed: " + response.wind.speed + " MPH");
@@ -104,15 +110,24 @@ $(document).ready(function(){
                     totalTemp = totalTemp + response.list[j].main.temp;
 
                     totalHumid = totalHumid+response.list[j].main.humidity;
+
+                    
                 }
 
                 totalTemp = (totalTemp/8).toFixed(2);
                 totalHumid = Math.round(totalHumid/8);
 
+                let fiveIcon = response.list[(i*8)+4].weather[0].icon;
+
                 let day = $("<div>");
+                let date = $("<p>").text(moment().add(i+1, "days").calendar());
+                let icon = $("<img>").attr({src : "http://openweathermap.org/img/wn/"+ fiveIcon +"@2x.png"})
+
                 let temp = $("<p>").text("Temp: " + totalTemp + " F");
                 let humid = $("<p>").text("Humidity: " + totalHumid + "%");
 
+                day.append(date);
+                day.append(icon);
                 day.append(temp);
                 day.append(humid);
 

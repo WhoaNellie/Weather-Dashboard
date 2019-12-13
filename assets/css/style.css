@@ -1,0 +1,57 @@
+body{
+    font-family: sans-serif;
+    line-height: 140%;
+}
+
+header{
+    background-color: black;
+    padding: 5%;
+    text-align: center;
+}
+    h1{
+        color: white;
+        font-size: 25pt;
+        font-weight: bolder;
+        letter-spacing: 1%;
+    }
+
+
+.container, #citySearch, #five-day, .weather{
+    display: flex;
+}
+
+.container{
+    width: 90%;
+    margin: 1vh auto;
+    flex-direction: row;
+    background-color: grey;
+}
+
+#citySearch{
+    flex-direction: column;
+    padding: 5%;
+    background-color: yellow;
+}
+
+.weather{
+    flex-direction: column;
+}
+
+    #current{
+        background-color: white;
+    }
+
+    #fiveDay{
+        flex-direction: row;
+    }
+
+        #fiveDay div{
+            float: left;
+            background-color: blue;
+        }
+
+
+label, h2{
+    font-weight: bold;
+    font-size: 18pt;
+}
