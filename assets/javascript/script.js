@@ -100,7 +100,7 @@ $(document).ready(function(){
             console.log(response);
 
             $("#fiveDay").empty();
-            $("#fiveDay").append($("<h2>Five-Day Forecast</h2>"));
+            $("#fiveHead").attr({style:"display: default;"});
 
             for(let i = 0; i < 5; i++){
 

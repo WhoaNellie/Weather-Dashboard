@@ -16,7 +16,7 @@ header{
     }
 
 
-.container, #citySearch, .search, #five-day, .weather{
+.container, #citySearch, .search, #fiveDay, .weather{
     display: flex;
 }
 
@@ -34,13 +34,52 @@ header{
 }
     .search{
         flex-direction: row;
+        margin-bottom: 2vh;
     }
-    #citySearch a{
-        text-decoration: none;
-        display: block;
-        padding: 2%;
-        margin: 1% 0;
+        #searchFor{
+            border-radius: 5px;
+            border: none;
+            padding: 0 3%;
+        }
+
+        #search{
+            text-indent: -9999px;
+            display: block;
+            background-color: rgb(87, 165, 255);
+            background-image: url("https://www.iconsdb.com/icons/preview/white/search-3-xxl.png");
+            background-repeat: no-repeat;
+            background-size: 25px 25px;
+            background-position: center;
+            border: none;
+            border-radius: 5px;
+            width: 45px;
+            height: 35px;
+            margin: 0 2%;
+            padding: 2%;
+        }
+
+
+    #cityList{
+        border: 1px solid grey;
+        border-radius: 5px;
+        background-color: white;
     }
+        #cityList li:first-child{
+            border-top: none;
+        }
+
+        #cityList li{
+            border-top: 1px solid grey;
+        }
+
+        #cityList a{
+            text-decoration: none;
+            display: block;
+            padding: 4%;
+            margin: 1% 0;
+            color: black;
+        }
+    
 
 .weather{
     flex-direction: column;
@@ -53,6 +92,14 @@ header{
         border-radius: 5px;
         padding: 3%;
     }
+
+        #current p{
+            margin: 1% 0;
+        }
+        #currentDate{
+            color: grey;
+        }
+
         #currentIcon{
             position: relative;
         }
@@ -64,21 +111,27 @@ header{
 
     #fiveDay{
         flex-direction: row;
+        justify-content: space-evenly;
         padding: 3%;
     }
 
         #fiveDay div{
-            float: left;
             background-color: rgb(87, 165, 255);
+            color: white;
             margin: 0 2%;
             padding: 2%;
             border-radius: 5px;
+        }
+
+        #fiveDay div p:first-of-type{
+            text-align: center;
+            font-weight: bold;
         }
 
 
 label, h2{
     font-weight: bold;
     font-size: 18pt;
-    margin: 1vh 0;
+    margin: 3vh 0;
 }
 
