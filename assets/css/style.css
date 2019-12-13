@@ -5,7 +5,7 @@ body{
 
 header{
     background-color: black;
-    padding: 5%;
+    padding: 3%;
     text-align: center;
 }
     h1{
@@ -16,7 +16,7 @@ header{
     }
 
 
-.container, #citySearch, #five-day, .weather{
+.container, #citySearch, .search, #five-day, .weather{
     display: flex;
 }
 
@@ -29,29 +29,56 @@ header{
 
 #citySearch{
     flex-direction: column;
-    padding: 5%;
-    background-color: yellow;
+    padding: 2%;
+    background-color: lightgray;
 }
+    .search{
+        flex-direction: row;
+    }
+    #citySearch a{
+        text-decoration: none;
+        display: block;
+        padding: 2%;
+        margin: 1% 0;
+    }
 
 .weather{
     flex-direction: column;
+    width: 100%;
 }
 
     #current{
         background-color: white;
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 3%;
     }
+        #currentIcon{
+            position: relative;
+        }
+            #currentIcon img{
+                max-height: 45px;
+                position: absolute;
+                top: -10px;
+            }
 
     #fiveDay{
         flex-direction: row;
+        padding: 3%;
     }
 
         #fiveDay div{
             float: left;
-            background-color: blue;
+            background-color: rgb(87, 165, 255);
+            margin: 0 2%;
+            padding: 2%;
+            border-radius: 5px;
         }
 
 
 label, h2{
     font-weight: bold;
     font-size: 18pt;
+    margin: 1vh 0;
 }
+
