@@ -57,7 +57,7 @@ $(document).ready(function(){
             $("#currentCity").text(response.name);
             $("#currentDate").text(moment().format("dddd MMM Do YYYY"));
             let icon = response.weather[0].icon;
-            let currIcon = $("<img>").attr({src : "http://openweathermap.org/img/wn/"+ icon +"@2x.png"})
+            let currIcon = $("<img>").attr({src : "https://openweathermap.org/img/wn/"+ icon +"@2x.png"})
             $("#currentIcon").html(currIcon);
 
             $("#currentTemp").text("Temperature: " + response.main.temp + " F");
@@ -121,7 +121,7 @@ $(document).ready(function(){
 
                 let day = $("<div>");
                 let date = $("<p>").text(moment().add(i+1, "days").format("(MM/DD/YY)"));
-                let icon = $("<img>").attr({src : "http://openweathermap.org/img/wn/"+ fiveIcon +"@2x.png"})
+                let icon = $("<img>").attr({src : "https://openweathermap.org/img/wn/"+ fiveIcon +"@2x.png"})
 
                 let temp = $("<p>").text("Temp: " + totalTemp + " F");
                 let humid = $("<p>").text("Humidity: " + totalHumid + "%");
