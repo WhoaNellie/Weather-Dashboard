@@ -85,7 +85,7 @@ $(document).ready(function(){
 
         // UV
         $.ajax({
-            url : "http://api.openweathermap.org/data/2.5/uvi?appid=9797b0cab9598da515a7cb02493600e9&lat="+lat+"&lon="+long,
+            url : "https://api.openweathermap.org/data/2.5/uvi?appid=9797b0cab9598da515a7cb02493600e9&lat="+lat+"&lon="+long,
             method : "GET"
         }).then(function(response){
             console.log(response);
