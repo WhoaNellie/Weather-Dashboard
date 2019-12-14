@@ -46,7 +46,7 @@ header{
             text-indent: -9999px;
             display: block;
             background-color: rgb(87, 165, 255);
-            background-image: url("https://www.iconsdb.com/icons/preview/white/search-3-xxl.png");
+            background-image: url(../images/search.png);
             background-repeat: no-repeat;
             background-size: 25px 25px;
             background-position: center;
