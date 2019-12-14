@@ -100,7 +100,7 @@ $(document).ready(function(){
             console.log(response);
 
             $("#fiveDay").empty();
-            $("#fiveHead").attr({style:"display: default;"});
+            $("#fiveHead").attr({style:"display: block;"});
 
             for(let i = 0; i < 5; i++){
 
@@ -120,7 +120,7 @@ $(document).ready(function(){
                 let fiveIcon = response.list[(i*8)+4].weather[0].icon;
 
                 let day = $("<div>");
-                let date = $("<p>").text(moment().add(i+1, "days").format("(MM/DD/YY)"));
+                let date = $("<p>").text(moment().add(i+1, "days").format("MM/DD/YY"));
                 let icon = $("<img>").attr({src : "https://openweathermap.org/img/wn/"+ fiveIcon +"@2x.png"})
 
                 let temp = $("<p>").text("Temp: " + totalTemp + " F");

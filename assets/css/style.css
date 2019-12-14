@@ -22,7 +22,7 @@ header{
 
 .container{
     width: 90%;
-    margin: 1vh auto;
+    margin: 0 auto;
     flex-direction: row;
     background-color: grey;
 }
@@ -84,6 +84,8 @@ header{
 .weather{
     flex-direction: column;
     width: 100%;
+    /* margin: 1vh 2%; */
+    padding: 2%;
 }
 
     #current{
@@ -109,23 +111,29 @@ header{
                 top: -10px;
             }
 
+    #fiveHead{
+        margin-left: 5%;
+        margin-top: 2vh;
+    }
+
     #fiveDay{
         flex-direction: row;
         justify-content: space-evenly;
-        padding: 3%;
+        padding: 2%;
     }
 
         #fiveDay div{
             background-color: rgb(87, 165, 255);
             color: white;
-            margin: 0 2%;
             padding: 2%;
             border-radius: 5px;
+            font-weight: bold;
+            font-size: 10pt;
         }
 
         #fiveDay div p:first-of-type{
             text-align: center;
-            font-weight: bold;
+            font-size: 16pt;
         }
 
 
