@@ -48,7 +48,7 @@ header{
             background-color: rgb(87, 165, 255);
             background-image: url(../images/search.png);
             background-repeat: no-repeat;
-            background-size: 25px 25px;
+            background-size: contain;
             background-position: center;
             border: none;
             border-radius: 5px;
